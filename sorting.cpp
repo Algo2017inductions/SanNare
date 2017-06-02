@@ -1,4 +1,4 @@
-//Sandip 106116078
+//Sandip Nair 106116078
 #include <iostream>
 
 //insertion sort algorithm

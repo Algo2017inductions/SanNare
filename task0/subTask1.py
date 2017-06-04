@@ -1,3 +1,4 @@
+#Simulations for Jasmine's curtain problem
 def SobhaMethod(stack,req):
     got = False
     stack.reverse()

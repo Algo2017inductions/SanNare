@@ -5,14 +5,9 @@ def flames(n,f):
     a = collections.Counter(list(n.lower()))
     b = collections.Counter(list(f.lower()))
     n = 0
-    for i in a.keys():
-        if i in b.keys():
-            n+=math.fabs(a[i]-b[i])
-        else:
-            n+=a[i]
-    for i in b.keys():
-        if i not in a.keys():
-            n+=b[i]
+    a.subtract(b)
+    for i in a:
+        n+=math.fabs(a[i])
     return int(n)
 
 def result(n,f):

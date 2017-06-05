@@ -1,12 +1,19 @@
+import collections
+import math
+
 def flames(n,f):
-    a = list(n.lower())
-    b = list(f.lower())
-    for i in a:
-        if i in b:
-            while i in a and i in b:
-                a.remove(i)
-                b.remove(i)
-    return len(a)+len(b)
+    a = collections.Counter(list(n.lower()))
+    b = collections.Counter(list(f.lower()))
+    n = 0
+    for i in a.keys():
+        if i in b.keys():
+            n+=math.fabs(a[i]-b[i])
+        else:
+            n+=a[i]
+    for i in b.keys():
+        if i not in a.keys():
+            n+=b[i]
+    return int(n)
 
 def result(n,f):
     x = flames(n,f)
